@@ -55,8 +55,7 @@ interface XunitFailure {
 }
 
 abstract class XunitReportPerTestReporter implements Reporter, Colorizer {
-    // follows this schema https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd 
-    // produces report in a way which looks nice when viewed in GitLab CI/CD web GUI, but is not neccesarily semantically correct
+
     private suites: XunitSuite[] = []
 
     constructor(private reportPath: string) { }
@@ -180,7 +179,6 @@ abstract class XunitReportPerTestReporter implements Reporter, Colorizer {
 }
 
 export class XunitGenericReporter extends XunitReportPerTestReporter {
-
     // follows this schema https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd and produces one report file per test file
     // if some CI requires single report file may also implement reporter for this format https://github.com/windyroad/JUnit-Schema/blob/master/JUnit.xsd
 

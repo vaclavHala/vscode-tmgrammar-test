@@ -11,6 +11,7 @@
     "url": "https://github.com/PanAeon/vscode-tmgrammar-test/issues"
   },
   "scripts": {
+    "prepare": "npm run build",
     "build": "npx tsc",
     "coverage": "npx nyc --reporter=html mocha -r ts-node/register 'test/**/*.test.ts'",
     "format": "prettier --config .prettierrc 'src/**/*.ts' 'test/**/*.ts' --write",
